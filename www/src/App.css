@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(252, 252, 252),
+    rgb(252, 252, 252) 100%
+  );
+}
+.todo-app {
+  min-height: 500px;
+  margin: 3% auto;
+  background: rgb(252, 252, 252);
+}
+
+h1 {
+  margin: 32px 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.todo-form {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.todo-input {
+  color: rgb(90, 90, 90);
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: -5px -5px 20px white,  5px 5px 20px #babecc;
+  margin: 2% auto;
+  color: #333;
+  font-weight: 500;
+  padding: 16px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.complete {
+  opacity: 0.7;
+}
+
+.task-name{
+  padding:0 10px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right:5%;
+}
+
+.icons button{
+  box-shadow: -5px -5px 10px #fff, 5px 5px 10px #babecc;
+  transition: all 0.2s ease-in-out;
+  margin-right: 30%;
+  border-color: transparent;
+  border-radius: 5px;
+  color: #9575cd;
+  align-items:center;
+  padding: 3px 3px 0 3px;
+}
+
+.icons button:hover{
+  box-shadow: -2px -2px 5px white, 2px 2px 5px #babecc;
+}
+
+.icons button:focus{
+  background-color: #eeeeee;
+}
+
+.complete-icon{
+  display: flex;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.invisible{
+  background-color: transparent;
+  border:none;
+}
+
+.invisible:focus{
+  background-color: transparent;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: #9575cd !important;
+}
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid #9575cd !important;
+  box-shadow: 0 1px 0 0 #9575cd !important
+}
+
+.add-button{
+  margin:1% 0 3% 0;
+}

@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx:
+    depends_on:
+      - api
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "8080:80"
+  api:
+    build: 
+      dockerfile: Dockerfile
+      context: "./api"
+    volumes: 
+      - /app/node-modules
+      - ./api:/app
+  client:
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    build:
+      dockerfile: Dockerfile
+      context: ./www
+    volumes:
+      - /app/node_modules
+      - ./www:/app
