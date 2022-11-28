@@ -1,11 +1,10 @@
-import React, { useState,useRef } from 'react';
+import React, { useState } from 'react';
 import M from 'materialize-css';
 
 function TodoForm(props) {
     
     const [input, setInput] = useState('');
-
-    const inputRef = useRef(null);
+    
 
     const handleChange = e => {
         setInput(e.target.value);
@@ -16,8 +15,8 @@ function TodoForm(props) {
 
         props.onSubmit({
             id: props.edit?props.edit.id:Math.floor(Math.random() * 10000),
-            name:input,
-            completed:false
+            name: input,
+            completed: false
         });
 
         setInput('');
@@ -33,8 +32,7 @@ function TodoForm(props) {
                     id="edit-todo"
                     value={input} name="text" 
                     className="todo-input" 
-                    onChange={handleChange} 
-                    ref={inputRef}/>
+                    onChange={handleChange} />
                     <label htmlFor="edit-todo">{props.edit.name}</label>
                     <button type="submit" className="invisible">
                         <a className="btn-floating btn-medium waves-effect waves-light deep-purple lighten-2">
@@ -48,8 +46,7 @@ function TodoForm(props) {
                     id="add-todo"
                     value={input} name="text" 
                     className="todo-input" 
-                    onChange={handleChange} 
-                    ref={inputRef}/>
+                    onChange={handleChange} />
                     <label htmlFor="add-todo">Insert to-do item</label>
                     <button className="btn waves-effect waves-light deep-purple lighten-2 add-button" type="submit" name="action">
                         Add to-do<i className="material-icons right">add</i>
